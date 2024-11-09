@@ -1,0 +1,156 @@
+* {
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+/* .banner {
+    height: 100vh;
+    background: url("../img/banner.jpg");
+    background-size: cover;
+  } */
+
+/* Menambahkan margin pada konten agar tidak tertutup navbar */
+body {
+  padding-top: 0px; /* Sesuaikan tinggi navbar agar konten tidak tertutup */
+}
+
+.items-list a {
+  text-decoration: none;
+  color: white;
+  position: relative; /* Membutuhkan posisi relatif untuk pseudo-element */
+}
+
+.items-list a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px; /* Menempatkan garis sedikit di bawah teks */
+  left: 50%; /* Menempatkan garis mulai dari tengah */
+  width: 0; /* Mulai dari lebar 0 */
+  height: 2px; /* Ukuran garis bawah */
+  background-color: white;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out; /* Animasi muncul dari tengah ke kiri dan kanan */
+  transform: translateX(-50%); /* Menyelaraskan garis agar berada di tengah */
+}
+
+.items-list a:hover::after {
+  width: 50%; /* Garis bawah melebar 50% dari tengah ke kiri dan kanan */
+  left: 50%; /* Garis tetap berada di tengah */
+}
+
+.button-nav {
+  background-color: #ffffff;
+}
+
+.button-nav:hover {
+  background-color: blue;
+  transition: all 0.5s ease;
+  a {
+    transition: all 0.5s ease;
+    color: white;
+  }
+}
+
+/* Menambahkan style untuk navbar */
+/* .navbar {
+    position: relative;
+    z-index: 999;
+  } */
+
+/* Menyembunyikan menu pada awalnya dan pastikan item tampil vertikal */
+#mobileMenu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-20px); /* Mulai dari posisi atas */
+  transition: all 0.5s ease;
+  padding: 0;
+  width: 100%; /* Pastikan menu lebar penuh */
+  position: absolute;
+  top: 89%; /* Posisi menu tepat di bawah navbar */
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    #063fdb 0%,
+    #0363f0 100%
+  ); /* Warna latar belakang menu */
+  z-index: 999; /* Menjaga agar menu muncul di atas konten lainnya */
+}
+
+/* Untuk memastikan padding dan warna item menu */
+.menu-item {
+  padding: 10px 0;
+  text-align: center; /* Menempatkan item menu di tengah */
+  color: white;
+  border-bottom: 1px solid #fff; /* Membuat garis bawah antara item menu */
+}
+
+.menu-item:first-child {
+  border-top: 1px solid #fff;
+}
+
+/* Hapus border bawah terakhir */
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+/* Menjaga tombol tetap diatas navbar di mobile */
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Hamburger Icon */
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hamburger-icon div {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger to X */
+.hamburger-icon.active div:nth-child(1) {
+  transform: rotate(45deg);
+  position: relative;
+  top: 8px;
+}
+
+.hamburger-icon.active div:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.hamburger-icon.active div:nth-child(3) {
+  transform: rotate(-45deg);
+  position: relative;
+  top: -8px;
+}
+
+/* Efek hover pada card */
+.card {
+  transition: transform 0.3s ease; /* Efek transisi */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Memperbesar card saat di-hover */
+}
+
+.box {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
